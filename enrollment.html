@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!--    Likhita, Gonchikara    Account:  jadrn052
+        CS545, Fall 2012
+        Project #2
+-->   
+<head>
+	<title>Happy Days Summer camp</title>
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="proj2.css" />
+	<link href='http://fonts.googleapis.com/css?family=Headland+One|Oxygen+Mono|Griffy|Jacques+Francois+Shadow' rel='stylesheet' type='text/css'/>
+	<script type="text/javascript" src="/jquery/jquery.js"></script>  
+    <script type="text/javascript" src="ajax_get_lib.js"></script>      
+    <script type="text/javascript" src="form.js"></script>
+	
+</head>
+<body>
+	<div id="container">
+		<div id="content">
+		<h1>Happy days Summer camp</h1><br /><br /><br />
+		<h3>Please fill the following enrollment form</h3><br />
+		<fieldset>
+		<fieldset id="program">
+        <legend>Select a camp program</legend>
+        <form name="customer" 
+			  method="post"
+              action="processform.php"
+			  enctype="multipart/form-data">
+		<div id="boxes">	  
+		<input type="checkbox" name="camp[]" value="Band" /> Band Camp<br />
+	    <input type="checkbox" name="camp[]" value="Swimming" /> Swimming<br />
+	    <input type="checkbox" name="camp[]" value="Nature Discovery" /> Nature Discovery<br />
+	    <input type="checkbox" name="camp[]" value="Basketball" /> Basketball Camp<br />
+		<input type="checkbox" name="camp[]" value="Physical Training" /> Physical Training<br />
+        </div>
+		</fieldset><br />
+		<fieldset id="parent">
+        <legend>Parent Information</legend>
+        <ul> 
+			<li><label for="fname">First Name  :*</label>
+                <input type="text" name="fname"  id="fname" size="25" />
+				<label for="mname">Middle Name :</label>
+                <input type="text" name="mname"  id="mname" size="24" /></li>
+            <li><label for="lname">Last Name   :*</label>
+                <input type="text" name="lname"  id="lname" size="25" /></li> 
+			<li><label for="relation">Relationship to child :*</label>
+                <input type="radio" name="relation" value="Father" id="relation"/>Father
+				<input type="radio" name="relation" value="Mother" id="relation"/>Mother
+				<input type="radio" name="relation" value="Guardian" id="relation"/>Guardian</li>	
+            <li><label for="address1">Address Line1    :*</label>
+                <input type="text" name="address1"  id="address1" size="55" /></li> 
+			<li><label for="address2">Address Line 2    :</label>
+                <input type="text" name="address2"  id="address2" size="55" /></li> 				
+            <li><label for="city">City :*</label>
+                <input type="text" name="city"  id="city" size="25" /> 
+                <label for="state">State :*</label>
+				<input type="text" name="state"  id="state" size="25" />                                                      
+                <label for="zip">Zip :*</label>
+                <input type="text" name="zip" id="zip" size="5" maxlength="5" /></li>   
+			<li><label for="primaryphone">Primary Phone :*</label>
+                (<input type="text" name="area_phone" id="primaryphone" size="3" maxlength="3" />)  
+                 <input type="text" name="prefix_phone" size="3" maxlength="3" /> -
+                <input type="text" name="phone" size="4" maxlength="4" />		
+            <label for="secondaryphone">Secondary Phone :</label>
+                (<input type="text" name="sarea_phone" id="secondaryphone" size="3" maxlength="3" />)  
+                 <input type="text" name="sprefix_phone" size="3" maxlength="3" /> -
+                <input type="text" name="sphone" size="4" maxlength="4" /></li> 
+            <li><label for="email">Email :*</label>
+                <input type="text" name="email" id="email" size="30" /></li>
+        </ul>
+        </fieldset><br />
+		<fieldset id="child">
+        <legend>Child Information</legend>
+        <ul>  
+            <li><label for="childfname">First Name :*</label>
+                <input type="text" name="childfname"  id="childfname" size="25" /> 
+				<label for="childmname">Middle Name :</label>
+                <input type="text" name="childmname"  id="childmname" size="24" /></li> 
+            <li><label for="childlname">Last Name :*</label>
+                <input type="text" name="childlname"  id="childlname" size="25" /></li> 
+			<li><label for="nickname">Name the child goes by :</label>
+                <input type="text" name="nickname"  id="nickname" size="25" /></li>	
+			<li><label for="file">Upload photo :*</label>
+				<input type="file" name="file" /></li>	
+			<li><label for="gender">Gender :*</label>
+                <input type="radio" name="gender" value="Male" id="gender"/>Male
+				<input type="radio" name="gender" value="Female" id="gender"/>Female
+				<label for="dob">Date of Birth :*</label>
+                <input type="text" name="dob"  id="dob" size="10" />
+				<label for="dob">(MM-DD-YYYY)</label></li>
+			<li><label for="description">Medical Conditions :</label>	
+				<textarea rows="4" cols="90" name="description"></textarea></li>
+			<li><label for="requirements">Special Dietary Requirements :</label>	
+				<textarea rows="4" cols="90" name="requirements"></textarea></li>	
+			<li><label for="secname">Secondary emergency contact Name :*</label>
+                <input type="text" name="secname"  id="secname" size="30" /></li>
+            <li><label for="cellphone">Emergency contact Cell Phone :*</label>
+                (<input type="text" name="area" id="cellphone" size="3" maxlength="3" />)  
+                 <input type="text" name="prefix" size="3" maxlength="3" /> -
+                <input type="text" name="number" size="4" maxlength="4" /></li> 
+        </ul>
+        </fieldset>
+		
+		<div id="message_line">&nbsp;</div>
+        <div id="button_panel">  
+            <input type="reset"  class="button" />
+            <input type="submit"  value="Submit"  class="button" /> 
+        </div> 
+		</fieldset><br />  
+		</form>
+		<img src="loading.gif" id="busy_wait" alt="busy wait icon" />
+		<div id="footer">
+		</div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div> 
+	</div> 
+</body>
+</html>	
