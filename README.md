@@ -1,1 +1,2 @@
 # SummerCampWebSite
+This web application is used for summer camp enrollment for various available activities. This application has a form that should be filled by parents to enroll their kids for various activities. After enrolling the kid, the parent gets a confirmation that the kid is enrolled. This project also comes with a annual report genrating page which could be used by the admin to audit his numbers.
